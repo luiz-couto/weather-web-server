@@ -40,11 +40,34 @@ app.get('/help', (req, res) => {
 });
 
 app.get('/weather',(req, res) => {
+    if (!req.query.address) {
+        res.send({
+            error: 'You must provide the address to fetch the weather from!'
+        })
+        return;
+    }
+
     res.send({
-        location: 'Brazil',
+        address: req.query.address,
+        location: 'Nova Lima',
         forecast: 30
     });
 });
+
+app.get('/products', (req, res) => {
+
+    if (!req.query.search) {
+        res.send({
+            error: 'You must provide a search term'
+        });
+        return;
+    }
+
+    console.log(req.query.search);
+    res.send({
+        products: []
+    })
+})
 
 app.get('/help/*', (req, res) => {
     res.render('404', {
