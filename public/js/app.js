@@ -23,7 +23,7 @@ weatherForm.addEventListener('submit', (e) => {
             return;
         }
         messageOne.textContent = data.location;
-        messageTwo.textContent = 'Info: ' + data.forecastData.weatherDes + '\n' + 'Temperature: ' + data.forecastData.temperature + ' °C\n' + 'FeelsLike: ' + data.forecastData.feelsLike + ' °C';
+        messageTwo.textContent = 'Info: ' + data.forecastData.weatherDes + '\n' + 'Temperature: ' + data.forecastData.temperature + ' °C\n' + 'FeelsLike: ' + data.forecastData.feelsLike + ' °C\n' + 'Humidity: ' + data.forecastData.humidity + ' %';
     })
 });
 });
